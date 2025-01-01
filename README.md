@@ -33,9 +33,14 @@ Details list:
 
 Additional Recommendations:
 
-**Data Encryption**: Use encryption on sensitive files and communications (especially on laptops or mobile devices).
-**Remote Desktop Security**: If using remote desktop services, ensure secure VPN access and enable encryption.
-**Password Rotation**: Periodically rotate passwords, especially for critical accounts and systems.
+**Data Encryption**: 
+Use encryption on sensitive files and communications (especially on laptops or mobile devices).
+
+**Remote Desktop Security**: 
+If using remote desktop services, ensure secure VPN access and enable encryption.
+
+**Password Rotation**: 
+Periodically rotate passwords, especially for critical accounts and systems.
 
 Additional Core Features for Enhanced Security:
 **VPN (Virtual Private Network)**:
