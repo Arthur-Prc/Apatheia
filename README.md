@@ -50,7 +50,7 @@ Use Identity and Access Management (IAM) solutions like Okta to enforce the prin
 Integrate a Cloud Access Security Broker (CASB) (e.g., McAfee, Netskope) to monitor and secure cloud usage, especially for sensitive data in SaaS platforms.
 
 **Pending updates:**
-- Electron JS desktop app.
+- Electron JS desktop app. (Add node_modules with .gitignore)
 - React mobile app.
 - CVEDB automated updates.
 
