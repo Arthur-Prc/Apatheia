@@ -1,4 +1,4 @@
-# Apatheia-Self-Defense-Remote-Work
+# Apatheia
 Public use protocol for getting safe when working remotely
 
 Details list:
