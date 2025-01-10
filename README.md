@@ -4,18 +4,16 @@ Public use protocol for getting safe when working remotely
 Details list:
 
 **Dailies:**
-- Backup + organize files.
+- Automated backups.
 - Software Updates.
 - Antivirus Scan.
 - Check Logs.
 
 **Weekly:**
 - Offline backup.
-- File permissions.
-- Email security.
-- Router updates.
+- Check File permissions.
+- Email security Settings.
 - 2FA Verification.
-- Anti Theft.
 
 **Monthly:**
 - Anti ransonware.
@@ -25,6 +23,8 @@ Details list:
 - Avoid phishing.
 - AI Monitoring.
 - Cyber Insurance.
+- Router Firmware.
+- Anti Theft Apps.
 
 Additional Recommendations:
 
