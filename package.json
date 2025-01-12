@@ -1,0 +1,15 @@
+{
+  "name": "apatheia",
+  "version": "1.0.0",
+  "description": "Public use protocol for getting safe when working remotely",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.3.1"
+  }
+}
