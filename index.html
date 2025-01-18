@@ -1,11 +1,58 @@
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>My Electron App</title>
-   </head>
-   <body>
-     <h1>Hello, Electron!</h1>
-   </body>
-   </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      padding: 10px;
+    }
+    .task-done {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Data Protection Checklist</h1>
+  
+  <h2>Daily Tasks</h2>
+  <ul id="daily-tasks">
+    <li><input type="checkbox" id="daily-backup"> Backup & Organize Files</li>
+    <li><input type="checkbox" id="daily-updates"> Software Updates</li>
+    <li><input type="checkbox" id="daily-antivirus"> Antivirus Scan</li>
+    <li><input type="checkbox" id="daily-logs"> Check Logs</li>
+  </ul>
+
+  <h2>Weekly Tasks</h2>
+  <ul id="weekly-tasks">
+    <li><input type="checkbox" id="weekly-backup"> Offline Backup</li>
+    <li><input type="checkbox" id="weekly-permissions"> File Permissions</li>
+    <li><input type="checkbox" id="weekly-email"> Email Security</li>
+    <li><input type="checkbox" id="weekly-router"> Router Updates</li>
+    <li><input type="checkbox" id="weekly-2fa"> 2FA Verification</li>
+  </ul>
+
+  <h2>Monthly Tasks</h2>
+  <ul id="monthly-tasks">
+    <li><input type="checkbox" id="monthly-ransomware"> Anti-Ransomware</li>
+    <li><input type="checkbox" id="monthly-keychain"> Password Keychain</li>
+    <li><input type="checkbox" id="monthly-yubikey"> Yubikey</li>
+    <li><input type="checkbox" id="monthly-physical"> Physical Security</li>
+    <li><input type="checkbox" id="monthly-phishing"> Avoid Phishing</li>
+    <li><input type="checkbox" id="monthly-ai"> AI Monitoring</li>
+    <li><input type="checkbox" id="monthly-insurance"> Cyber Insurance</li>
+  </ul>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
+
