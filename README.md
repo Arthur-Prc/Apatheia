@@ -49,8 +49,22 @@ Use Identity and Access Management (IAM) solutions like Okta to enforce the prin
 **Cloud Security (CASB)**:
 Integrate a Cloud Access Security Broker (CASB) (e.g., McAfee, Netskope) to monitor and secure cloud usage, especially for sensitive data in SaaS platforms.
 
+
+**How to run the current version:**
+
+git clone https://github.com/Arthur-Prc/Apatheia/
+
+**go to the project directory**
+
+npm init -y
+
+npm install electron --save-dev
+
+npx electron .
+
 **Pending updates:**
-- Electron JS desktop app.
-- React mobile app.
+- .exe and .cmd executable files for Windows and Mac.
+- React mobile app for iOS and Android.
 - CVEDB automated updates.
+- Brave or Swash ads for crypto earnings
 
