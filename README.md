@@ -1,70 +1,160 @@
 # Apatheia
-Public use protocol for getting safe when working remotely
 
-Details list:
+**Apatheia** is a security automation engine and protocol designed to keep remote workers, freelancers, and distributed teams **safe by default**.
 
-**Dailies:**
-- Automated backups.
-- Software Updates.
-- Antivirus Scan.
-- Check Logs.
+Originally built as an Electron JS task-highlighting and reminder engine, Apatheia is evolving into a **ready-to-import security framework for RMM platforms** such as **NinjaOne**, with support for scheduled checks, policy enforcement, and security posture visibility.
 
-**Weekly:**
-- Offline backup.
-- Check File permissions.
-- Email security Settings.
-- 2FA Verification.
+The goal is simple:
 
-**Monthly:**
-- Anti ransonware.
-- Password Keychain.
-- Yubikey.
-- Physical sec (Face, bio, etc).
-- Avoid phishing.
-- AI Monitoring.
-- Cyber Insurance.
-- Router Firmware.
-- Anti Theft Apps.
+> **Make good security hygiene unavoidable, lightweight, and verifiable.**
 
-Additional Recommendations:
+---
 
-**Data Encryption**: 
-Use encryption on sensitive files and communications (especially on laptops or mobile devices).
+## What Apatheia Is
 
-**Remote Desktop Security**: 
-If using remote desktop services, ensure secure VPN access and enable encryption.
+* A **security checklist engine** with opinionated best practices
+* A **task scheduling and reminder system**
+* A **public-use protocol** for remote work safety
+* A **foundation for RMM integrations** (NinjaOne, etc.)
+* A **human-readable + machine-executable security standard**
 
-**Password Rotation**: 
-Periodically rotate passwords, especially for critical accounts and systems.
+---
 
-Additional Core Features for Enhanced Security:
-**VPN (Virtual Private Network)**:
-Use a trusted VPN service to secure remote connections and protect data in transit, especially on public networks.
-Ensure the VPN is configured with strong encryption (AES-256) and DNS leak protection.
+## Core Concepts
 
-**Zero Trust Architecture (ZTA)**:
-Implement a Zero Trust approach for network security, where access to resources is constantly verified and authenticated, even within the organization’s network.
-Use Identity and Access Management (IAM) solutions like Okta to enforce the principle of least privilege and prevent unauthorized access.
+* **Time-based security hygiene** (daily / weekly / monthly)
+* **Low-friction automation**
+* **Defense-in-depth**
+* **Remote-first threat model**
+* **Zero Trust mindset**
 
-**Cloud Security (CASB)**:
-Integrate a Cloud Access Security Broker (CASB) (e.g., McAfee, Netskope) to monitor and secure cloud usage, especially for sensitive data in SaaS platforms.
+---
 
+## Security Tasks Protocol
 
-**How to run the current version:**
+### 🔁 Daily Tasks (Automated / Silent Where Possible)
 
-git clone https://github.com/Arthur-Prc/Apatheia/
+These are designed to be **automatic**, with alerts only on failure.
 
-**go to the project directory**
+* Automated backups verification
+* Operating system & application update checks
+* Antivirus / EDR scan status
+* System & security log review
 
-npm init -y
+---
 
-npm install electron --save-dev
+### 📆 Weekly Tasks (Preventive Controls)
 
-npx electron .
+Focused on **misconfiguration drift** and account security.
 
-**Pending updates:**
-- .exe and .cmd executable files for Windows and Mac.
-- React mobile app for iOS and Android.
-- CVEDB automated updates.
-- Brave or Swash ads for crypto earnings
+* Offline / air-gapped backup verification
+* File and folder permission audit
+* Email security settings review (SPF, DKIM, DMARC)
+* 2FA / MFA enforcement and verification
 
+---
+
+### 🗓 Monthly Tasks (Hardening & Risk Reduction)
+
+Longer-cycle protections and resilience checks.
+
+* Anti-ransomware protection verification
+* Password manager / keychain audit
+* Hardware security key (YubiKey or equivalent) validation
+* Physical security review (biometrics, lock screen, camera/mic)
+* Phishing awareness validation
+* AI-based threat monitoring status
+* Cyber insurance review
+* Router / network device firmware updates
+* Anti-theft & device tracking apps verification
+
+---
+
+## Additional Security Recommendations
+
+These are **strongly recommended extensions** to the core protocol and may be enforced depending on the environment.
+
+### 🔐 Data Protection
+
+* Full-disk encryption on laptops and mobile devices
+* Encrypted communications for sensitive data
+
+### 🖥 Remote Access Security
+
+* Remote desktop access only via secure VPN
+* Enforced encryption for all remote sessions
+
+### 🔑 Credential Hygiene
+
+* Periodic password rotation for critical systems
+* Immediate rotation after suspected compromise
+
+---
+
+## Advanced Security Architecture (Optional but Recommended)
+
+These features elevate Apatheia from hygiene to **enterprise-grade security posture**.
+
+### 🌐 VPN (Virtual Private Network)
+
+* Mandatory VPN usage on untrusted networks
+* Strong encryption (AES-256)
+* DNS leak protection
+
+### 🧠 Zero Trust Architecture (ZTA)
+
+* Continuous authentication and authorization
+* Least-privilege access model
+* Identity and Access Management (IAM) integration
+
+  * Example: Okta, Azure AD
+
+### ☁ Cloud Security (CASB)
+
+* Cloud Access Security Broker integration
+* SaaS activity monitoring and data protection
+* Examples: Netskope, McAfee CASB
+
+---
+
+## RMM Integration Vision
+
+Apatheia is designed to be:
+
+* Imported as **scripts, policies, or task templates**
+* Mapped directly into **NinjaOne checks and automations**
+* Used as a **baseline security profile** for endpoints
+* Extended via plugins or custom checks
+
+Future versions will include:
+
+* Prebuilt NinjaOne policies
+* JSON/YAML task definitions
+* Compliance scoring
+* Alert severity mapping
+
+---
+
+## Target Users
+
+* Remote workers & freelancers
+* MSPs and IT administrators
+* Security-conscious teams
+* RMM platform users
+* Solo developers and consultants
+
+---
+
+## Status
+
+🚧 **Active development**
+Currently transitioning from an Electron-based task engine into a **modular security protocol and RMM-ready solution**.
+
+---
+
+## Philosophy
+
+> Security should not depend on motivation, memory, or discipline.
+> It should be **automatic, boring, and always on**.
+
+Apatheia exists to make that happen.
