@@ -1,0 +1,99 @@
+{
+  "name": "Apatheia Security Protocol",
+  "version": "0.1.0",
+  "description": "Remote work security hygiene protocol for RMM workspaces",
+  "scope": "workspace",
+  "controlLevels": {
+    "level_1_basic": {
+      "label": "Basic Hygiene",
+      "description": "Minimum security controls for remote work",
+      "tasks": ["daily_backups", "software_updates", "antivirus_scan"]
+    },
+    "level_2_hardened": {
+      "label": "Hardened",
+      "description": "Preventive and access control measures",
+      "tasks": ["offline_backup", "file_permissions", "email_security", "mfa_verification"]
+    },
+    "level_3_compliance": {
+      "label": "Compliance",
+      "description": "Advanced protections and resilience controls",
+      "tasks": ["anti_ransomware", "password_manager", "hardware_keys", "network_firmware"]
+    }
+  },
+  "tasks": {
+    "daily_backups": {
+      "schedule": "daily",
+      "type": "check",
+      "severity": "high",
+      "description": "Verify automated backups are running successfully"
+    },
+    "software_updates": {
+      "schedule": "daily",
+      "type": "check",
+      "severity": "medium",
+      "description": "Ensure OS and critical software are up to date"
+    },
+    "antivirus_scan": {
+      "schedule": "daily",
+      "type": "check",
+      "severity": "high",
+      "description": "Verify antivirus or EDR scan status"
+    },
+    "offline_backup": {
+      "schedule": "weekly",
+      "type": "check",
+      "severity": "high",
+      "description": "Confirm existence of offline or air-gapped backups"
+    },
+    "file_permissions": {
+      "schedule": "weekly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Audit file and folder permissions"
+    },
+    "email_security": {
+      "schedule": "weekly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Review email security configuration (SPF, DKIM, DMARC)"
+    },
+    "mfa_verification": {
+      "schedule": "weekly",
+      "type": "check",
+      "severity": "high",
+      "description": "Verify MFA/2FA enforcement"
+    },
+    "anti_ransomware": {
+      "schedule": "monthly",
+      "type": "check",
+      "severity": "critical",
+      "description": "Verify anti-ransomware protections are enabled"
+    },
+    "password_manager": {
+      "schedule": "monthly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Verify password manager usage and health"
+    },
+    "hardware_keys": {
+      "schedule": "monthly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Verify hardware security key availability (e.g. YubiKey)"
+    },
+    "network_firmware": {
+      "schedule": "monthly",
+      "type": "check",
+      "severity": "high",
+      "description": "Ensure router and network firmware are up to date"
+    }
+  },
+  "compliance": {
+    "scoring": {
+      "pass": 100,
+      "warning": 70,
+      "fail": 40
+    },
+    "evaluation": "percentage_of_tasks_passing"
+  }
+}
