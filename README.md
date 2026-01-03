@@ -158,3 +158,14 @@ Currently transitioning from an Electron-based task engine into a **modular secu
 > It should be **automatic, boring, and always on**.
 
 Apatheia exists to make that happen.
+
+
+vNext
+
+Repositioned Apatheia as a security engine ready for integration with RMM platforms (e.g., NinjaOne).
+
+Reorganized the task list into Daily / Weekly / Monthly, with a focus on automation and prevention.
+
+Added an Advanced Security Architecture section (VPN, Zero Trust, CASB).
+
+Improved clarity of the project as a public-use security hygiene protocol for remote work.
