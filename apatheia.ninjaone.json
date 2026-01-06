@@ -1,0 +1,127 @@
+{
+  "name": "Apatheia Security Protocol",
+  "version": "0.2.0",
+  "description": "Remote work security hygiene protocol for RMM workspaces",
+  "scope": "workspace",
+  "rmmTarget": "NinjaOne",
+  "owner": "Apatheia",
+  "controlLevels": {
+    "level_1_basic": {
+      "label": "Basic Hygiene",
+      "description": "Minimum security controls for remote work",
+      "minimumCompliance": 70,
+      "tasks": ["daily_backups", "software_updates", "antivirus_scan"]
+    },
+    "level_2_hardened": {
+      "label": "Hardened",
+      "description": "Preventive and access control measures",
+      "minimumCompliance": 85,
+      "tasks": ["offline_backup", "file_permissions", "email_security", "mfa_verification"]
+    },
+    "level_3_compliance": {
+      "label": "Compliance",
+      "description": "Advanced protections and resilience controls",
+      "minimumCompliance": 95,
+      "tasks": ["anti_ransomware", "password_manager", "hardware_keys", "network_firmware"]
+    }
+  },
+  "tasks": {
+    "daily_backups": {
+      "taskId": "APT-D-001",
+      "schedule": "daily",
+      "type": "check",
+      "severity": "high",
+      "description": "Verify automated backups are running successfully",
+      "automation": null
+    },
+    "software_updates": {
+      "taskId": "APT-D-002",
+      "schedule": "daily",
+      "type": "check",
+      "severity": "medium",
+      "description": "Ensure OS and critical software are up to date",
+      "automation": null
+    },
+    "antivirus_scan": {
+      "taskId": "APT-D-003",
+      "schedule": "daily",
+      "type": "check",
+      "severity": "high",
+      "description": "Verify antivirus or EDR scan status",
+      "automation": null
+    },
+    "offline_backup": {
+      "taskId": "APT-W-001",
+      "schedule": "weekly",
+      "type": "check",
+      "severity": "high",
+      "description": "Confirm existence of offline or air-gapped backups",
+      "automation": null
+    },
+    "file_permissions": {
+      "taskId": "APT-W-002",
+      "schedule": "weekly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Audit file and folder permissions",
+      "automation": null
+    },
+    "email_security": {
+      "taskId": "APT-W-003",
+      "schedule": "weekly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Review email security configuration (SPF, DKIM, DMARC)",
+      "automation": null
+    },
+    "mfa_verification": {
+      "taskId": "APT-W-004",
+      "schedule": "weekly",
+      "type": "check",
+      "severity": "high",
+      "description": "Verify MFA/2FA enforcement",
+      "automation": null
+    },
+    "anti_ransomware": {
+      "taskId": "APT-M-001",
+      "schedule": "monthly",
+      "type": "check",
+      "severity": "critical",
+      "description": "Verify anti-ransomware protections are enabled",
+      "automation": null
+    },
+    "password_manager": {
+      "taskId": "APT-M-002",
+      "schedule": "monthly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Verify password manager usage and health",
+      "automation": null
+    },
+    "hardware_keys": {
+      "taskId": "APT-M-003",
+      "schedule": "monthly",
+      "type": "audit",
+      "severity": "medium",
+      "description": "Verify hardware security key availability (e.g. YubiKey)",
+      "automation": null
+    },
+    "network_firmware": {
+      "taskId": "APT-M-004",
+      "schedule": "monthly",
+      "type": "check",
+      "severity": "high",
+      "description": "Ensure router and network firmware are up to date",
+      "automation": null
+    }
+  },
+  "compliance": {
+    "scoring": {
+      "pass": 100,
+      "warning": 70,
+      "fail": 40
+    },
+    "evaluation": "percentage_of_tasks_passing",
+    "enforcement": "control_level_threshold"
+  }
+}
