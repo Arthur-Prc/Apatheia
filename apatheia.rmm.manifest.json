@@ -1,0 +1,151 @@
+{
+  "name": "Apatheia Security Protocol",
+  "version": "0.3.0",
+  "description": "Remote work security hygiene protocol for supported RMM workspaces",
+  "scope": "workspace",
+  "rmmTargets": ["NinjaOne", "ConnectWiseAutomate", "DattoRMM"],
+  "owner": "Apatheia",
+  "controlLevels": {
+    "level_1_basic": {
+      "label": "Basic Hygiene",
+      "minimumCompliance": 70,
+      "tasks": ["daily_backups", "software_updates", "antivirus_scan"]
+    },
+    "level_2_hardened": {
+      "label": "Hardened",
+      "minimumCompliance": 85,
+      "tasks": ["offline_backup", "file_permissions", "email_security", "mfa_verification"]
+    },
+    "level_3_compliance": {
+      "label": "Compliance",
+      "minimumCompliance": 95,
+      "tasks": ["anti_ransomware", "password_manager", "hardware_keys", "network_firmware"]
+    }
+  },
+  "tasks": {
+    "daily_backups": {
+      "taskId": "APT-D-001",
+      "schedule": "daily",
+      "type": "check",
+      "severity": "high",
+      "automationHooks": {
+        "NinjaOne": {
+          "scriptId": "apatheia-backup-check",
+          "policyId": "apatheia-daily-policy"
+        },
+        "ConnectWiseAutomate": {
+          "scriptGuid": "APT-D-001-BACKUP",
+          "monitorId": "BackupStatusMonitor"
+        },
+        "DattoRMM": {
+          "componentUid": "apatheia-backup-component",
+          "policyUid": "daily-backup-policy"
+        }
+      }
+    },
+    "software_updates": {
+      "taskId": "APT-D-002",
+      "schedule": "daily",
+      "type": "check",
+      "severity": "medium",
+      "automationHooks": {
+        "NinjaOne": {
+          "scriptId": "apatheia-update-check",
+          "policyId": "apatheia-daily-policy"
+        },
+        "ConnectWiseAutomate": {
+          "scriptGuid": "APT-D-002-UPDATES",
+          "monitorId": "PatchComplianceMonitor"
+        },
+        "DattoRMM": {
+          "componentUid": "apatheia-patch-component",
+          "policyUid": "daily-patch-policy"
+        }
+      }
+    },
+    "antivirus_scan": {
+      "taskId": "APT-D-003",
+      "schedule": "daily",
+      "type": "check",
+      "severity": "high",
+      "automationHooks": {
+        "NinjaOne": {
+          "scriptId": "apatheia-av-status",
+          "policyId": "apatheia-daily-policy"
+        },
+        "ConnectWiseAutomate": {
+          "scriptGuid": "APT-D-003-AV",
+          "monitorId": "AVHealthMonitor"
+        },
+        "DattoRMM": {
+          "componentUid": "apatheia-av-component",
+          "policyUid": "daily-av-policy"
+        }
+      }
+    },
+    "offline_backup": {
+      "taskId": "APT-W-001",
+      "schedule": "weekly",
+      "type": "check",
+      "severity": "high",
+      "automationHooks": {
+        "NinjaOne": {
+          "scriptId": "apatheia-offline-backup",
+          "policyId": "apatheia-weekly-policy"
+        },
+        "ConnectWiseAutomate": {
+          "scriptGuid": "APT-W-001-OFFLINE-BACKUP",
+          "monitorId": "OfflineBackupMonitor"
+        },
+        "DattoRMM": {
+          "componentUid": "apatheia-offline-backup-component",
+          "policyUid": "weekly-backup-policy"
+        }
+      }
+    },
+    "file_permissions": {
+      "taskId": "APT-W-002",
+      "schedule": "weekly",
+      "type": "audit",
+      "severity": "medium",
+      "automationHooks": {
+        "NinjaOne": {
+          "scriptId": "apatheia-permission-audit",
+          "policyId": "apatheia-weekly-policy"
+        },
+        "ConnectWiseAutomate": {
+          "scriptGuid": "APT-W-002-PERMISSIONS",
+          "monitorId": "PermissionDriftMonitor"
+        },
+        "DattoRMM": {
+          "componentUid": "apatheia-permissions-component",
+          "policyUid": "weekly-audit-policy"
+        }
+      }
+    },
+    "mfa_verification": {
+      "taskId": "APT-W-004",
+      "schedule": "weekly",
+      "type": "check",
+      "severity": "high",
+      "automationHooks": {
+        "NinjaOne": {
+          "scriptId": "apatheia-mfa-check",
+          "policyId": "apatheia-weekly-policy"
+        },
+        "ConnectWiseAutomate": {
+          "scriptGuid": "APT-W-004-MFA",
+          "monitorId": "MFAComplianceMonitor"
+        },
+        "DattoRMM": {
+          "componentUid": "apatheia-mfa-component",
+          "policyUid": "weekly-identity-policy"
+        }
+      }
+    }
+  },
+  "compliance": {
+    "evaluation": "percentage_of_tasks_passing",
+    "enforcement": "control_level_threshold"
+  }
+}
