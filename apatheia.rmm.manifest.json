@@ -1,151 +1,139 @@
 {
   "name": "Apatheia Security Protocol",
-  "version": "0.3.0",
-  "description": "Remote work security hygiene protocol for supported RMM workspaces",
+  "version": "0.4.0",
+  "description": "Remote work security hygiene protocol with compliance scoring for RMM workspaces",
   "scope": "workspace",
   "rmmTargets": ["NinjaOne", "ConnectWiseAutomate", "DattoRMM"],
   "owner": "Apatheia",
+
   "controlLevels": {
     "level_1_basic": {
       "label": "Basic Hygiene",
       "minimumCompliance": 70,
+      "requiredSeverity": ["medium", "high"],
       "tasks": ["daily_backups", "software_updates", "antivirus_scan"]
     },
     "level_2_hardened": {
       "label": "Hardened",
       "minimumCompliance": 85,
+      "requiredSeverity": ["medium", "high", "critical"],
       "tasks": ["offline_backup", "file_permissions", "email_security", "mfa_verification"]
     },
     "level_3_compliance": {
       "label": "Compliance",
       "minimumCompliance": 95,
+      "requiredSeverity": ["high", "critical"],
       "tasks": ["anti_ransomware", "password_manager", "hardware_keys", "network_firmware"]
     }
   },
+
   "tasks": {
     "daily_backups": {
       "taskId": "APT-D-001",
       "schedule": "daily",
       "type": "check",
       "severity": "high",
-      "automationHooks": {
-        "NinjaOne": {
-          "scriptId": "apatheia-backup-check",
-          "policyId": "apatheia-daily-policy"
-        },
-        "ConnectWiseAutomate": {
-          "scriptGuid": "APT-D-001-BACKUP",
-          "monitorId": "BackupStatusMonitor"
-        },
-        "DattoRMM": {
-          "componentUid": "apatheia-backup-component",
-          "policyUid": "daily-backup-policy"
-        }
-      }
+      "weight": 15,
+      "description": "Verify automated backups are running successfully"
     },
     "software_updates": {
       "taskId": "APT-D-002",
       "schedule": "daily",
       "type": "check",
       "severity": "medium",
-      "automationHooks": {
-        "NinjaOne": {
-          "scriptId": "apatheia-update-check",
-          "policyId": "apatheia-daily-policy"
-        },
-        "ConnectWiseAutomate": {
-          "scriptGuid": "APT-D-002-UPDATES",
-          "monitorId": "PatchComplianceMonitor"
-        },
-        "DattoRMM": {
-          "componentUid": "apatheia-patch-component",
-          "policyUid": "daily-patch-policy"
-        }
-      }
+      "weight": 10,
+      "description": "Ensure OS and critical software are up to date"
     },
     "antivirus_scan": {
       "taskId": "APT-D-003",
       "schedule": "daily",
       "type": "check",
       "severity": "high",
-      "automationHooks": {
-        "NinjaOne": {
-          "scriptId": "apatheia-av-status",
-          "policyId": "apatheia-daily-policy"
-        },
-        "ConnectWiseAutomate": {
-          "scriptGuid": "APT-D-003-AV",
-          "monitorId": "AVHealthMonitor"
-        },
-        "DattoRMM": {
-          "componentUid": "apatheia-av-component",
-          "policyUid": "daily-av-policy"
-        }
-      }
+      "weight": 15,
+      "description": "Verify antivirus or EDR scan status"
     },
     "offline_backup": {
       "taskId": "APT-W-001",
       "schedule": "weekly",
       "type": "check",
       "severity": "high",
-      "automationHooks": {
-        "NinjaOne": {
-          "scriptId": "apatheia-offline-backup",
-          "policyId": "apatheia-weekly-policy"
-        },
-        "ConnectWiseAutomate": {
-          "scriptGuid": "APT-W-001-OFFLINE-BACKUP",
-          "monitorId": "OfflineBackupMonitor"
-        },
-        "DattoRMM": {
-          "componentUid": "apatheia-offline-backup-component",
-          "policyUid": "weekly-backup-policy"
-        }
-      }
+      "weight": 15,
+      "description": "Confirm existence of offline or air-gapped backups"
     },
     "file_permissions": {
       "taskId": "APT-W-002",
       "schedule": "weekly",
       "type": "audit",
       "severity": "medium",
-      "automationHooks": {
-        "NinjaOne": {
-          "scriptId": "apatheia-permission-audit",
-          "policyId": "apatheia-weekly-policy"
-        },
-        "ConnectWiseAutomate": {
-          "scriptGuid": "APT-W-002-PERMISSIONS",
-          "monitorId": "PermissionDriftMonitor"
-        },
-        "DattoRMM": {
-          "componentUid": "apatheia-permissions-component",
-          "policyUid": "weekly-audit-policy"
-        }
-      }
+      "weight": 10,
+      "description": "Audit file and folder permissions"
+    },
+    "email_security": {
+      "taskId": "APT-W-003",
+      "schedule": "weekly",
+      "type": "audit",
+      "severity": "medium",
+      "weight": 10,
+      "description": "Review email security configuration (SPF, DKIM, DMARC)"
     },
     "mfa_verification": {
       "taskId": "APT-W-004",
       "schedule": "weekly",
       "type": "check",
       "severity": "high",
-      "automationHooks": {
-        "NinjaOne": {
-          "scriptId": "apatheia-mfa-check",
-          "policyId": "apatheia-weekly-policy"
-        },
-        "ConnectWiseAutomate": {
-          "scriptGuid": "APT-W-004-MFA",
-          "monitorId": "MFAComplianceMonitor"
-        },
-        "DattoRMM": {
-          "componentUid": "apatheia-mfa-component",
-          "policyUid": "weekly-identity-policy"
-        }
-      }
+      "weight": 15,
+      "description": "Verify MFA/2FA enforcement"
+    },
+    "anti_ransomware": {
+      "taskId": "APT-M-001",
+      "schedule": "monthly",
+      "type": "check",
+      "severity": "critical",
+      "weight": 20,
+      "description": "Verify anti-ransomware protections are enabled"
+    },
+    "password_manager": {
+      "taskId": "APT-M-002",
+      "schedule": "monthly",
+      "type": "audit",
+      "severity": "medium",
+      "weight": 10,
+      "description": "Verify password manager usage and health"
+    },
+    "hardware_keys": {
+      "taskId": "APT-M-003",
+      "schedule": "monthly",
+      "type": "audit",
+      "severity": "medium",
+      "weight": 10,
+      "description": "Verify hardware security key availability"
+    },
+    "network_firmware": {
+      "taskId": "APT-M-004",
+      "schedule": "monthly",
+      "type": "check",
+      "severity": "high",
+      "weight": 15,
+      "description": "Ensure router and network firmware are up to date"
     }
   },
+
   "compliance": {
-    "evaluation": "percentage_of_tasks_passing",
-    "enforcement": "control_level_threshold"
+    "scoringModel": "weighted",
+    "severityMultiplier": {
+      "medium": 1,
+      "high": 1.5,
+      "critical": 2
+    },
+    "calculation": "sum(passed_task_weight * severity_multiplier) / sum(total_task_weight * severity_multiplier)",
+    "statuses": {
+      "compliant": 90,
+      "at_risk": 70,
+      "non_compliant": 0
+    },
+    "failConditions": [
+      "any_critical_task_failed",
+      "control_level_minimum_not_met"
+    ]
   }
 }
