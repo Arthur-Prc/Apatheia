@@ -157,4 +157,24 @@ Currently transitioning from an Electron-based task engine into a **modular secu
 > Security should not depend on motivation, memory, or discipline.
 > It should be **automatic, boring, and always on**.
 
-Apatheia exists to make that happen.
+**Apatheia exists to make that happen.**
+
+
+
+How Compliance Is Now Calculated (simple & defensible)
+
+Each task has a weight
+
+Severity increases impact (critical > high > medium)
+
+Final score = weighted percentage
+
+Workspace can:
+
+Pass overall
+
+Be At Risk
+
+Be Non-Compliant
+
+A single critical failure can hard-fail compliance
