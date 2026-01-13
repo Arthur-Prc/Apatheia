@@ -1,0 +1,14 @@
+Card Name,Description,Due Date,Labels,List Name
+Daily Backups,"APT-D-001 | Verify automated backups are running successfully\nSeverity: High\nControl Level: Basic",,High,Daily
+Software Updates,"APT-D-002 | Ensure OS and critical software are up to date\nSeverity: Medium\nControl Level: Basic",,Medium,Daily
+Antivirus / EDR Scan,"APT-D-003 | Verify antivirus or EDR scan status\nSeverity: High\nControl Level: Basic",,High,Daily
+
+Offline Backup Verification,"APT-W-001 | Confirm existence of offline or air-gapped backups\nSeverity: High\nControl Level: Hardened",,High,Weekly
+File Permissions Audit,"APT-W-002 | Audit file and folder permissions\nSeverity: Medium\nControl Level: Hardened",,Medium,Weekly
+Email Security Review,"APT-W-003 | Review email security configuration (SPF, DKIM, DMARC)\nSeverity: Medium\nControl Level: Hardened",,Medium,Weekly
+MFA / 2FA Verification,"APT-W-004 | Verify MFA/2FA enforcement\nSeverity: High\nControl Level: Hardened",,High,Weekly
+
+Anti-Ransomware Protection,"APT-M-001 | Verify anti-ransomware protections are enabled\nSeverity: Critical\nControl Level: Compliance",,Critical,Monthly
+Password Manager Audit,"APT-M-002 | Verify password manager usage and health\nSeverity: Medium\nControl Level: Compliance",,Medium,Monthly
+Hardware Security Keys,"APT-M-003 | Verify hardware security key availability (YubiKey)\nSeverity: Medium\nControl Level: Compliance",,Medium,Monthly
+Network Firmware Updates,"APT-M-004 | Ensure router and network firmware are up to date\nSeverity: High\nControl Level: Compliance",,High,Monthly
