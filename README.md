@@ -159,9 +159,9 @@ Currently transitioning from an Electron-based task engine into a **modular secu
 
 **Apatheia exists to make that happen.**
 
+---
 
-
-How Compliance Is Now Calculated (simple & defensible)
+**How Compliance Is Now Calculated (simple & defensible)**
 
 Each task has a weight
 
