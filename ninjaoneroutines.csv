@@ -1,0 +1,18 @@
+Title,Description,List
+Automated Backups Verification,"In NinjaOne: Check Dashboard > Backup Tab. Ensure all 'Last Backup' dates are within 24hrs. Set up a 'Backup Failure' alert policy to automate this card's completion.",Daily Tasks
+OS & App Update Checks,"In NinjaOne: Go to Patch Management. Ensure 'Critical' and 'Security' patches are approved for auto-deployment. Check for 'Failed' status in the Patch Dashboard.",Daily Tasks
+AV / EDR Scan Status,"In NinjaOne: Use the Antivirus dashboard. Verify that the 'Protection' status is green for all endpoints. Audit 'Threats Detected' in the last 24h.",Daily Tasks
+System & Security Log Review,"In NinjaOne: Check 'Activities' and 'Events'. Filter for 'Critical' or 'Error' severity. Look for unusual login patterns or multiple failed sudo/admin attempts.",Daily Tasks
+Air-Gapped Backup Verification,"Manual Check: Ensure off-site/offline storage (immutable cloud or physical drive) has successfully synced. Perform one test file restoration to verify integrity.",Weekly Tasks
+File & Folder Permission Audit,"In NinjaOne: Run a script to report on local 'Administrators' or 'Root' group members. Ensure no unauthorized users have gained elevated privileges.",Weekly Tasks
+Email Security Review (SPF/DKIM/DMARC),"Use an external tool (like MXToolbox) to verify domain health. Check NinjaOne alerts for any SMTP failure notifications if monitoring mail servers.",Weekly Tasks
+MFA Enforcement & Verification,"Audit your Identity Provider (Azure AD/Okta/Google). Ensure 100% MFA enrollment. In NinjaOne, check for users without local MFA enabled where applicable.",Weekly Tasks
+Anti-Ransomware Verification,"In NinjaOne: Verify 'Install/Monitor' state for Ransomware protection tools. Ensure 'Rollback' features (if using VSS/EDR) are active on all drives.",Monthly Tasks
+Password Manager Audit,"Verify all team members have logged into the company password manager recently. Rotate any shared administrative passwords used for service accounts.",Monthly Tasks
+Hardware Security Key Validation,"Physical check: Ensure YubiKeys are functional and registered. In NinjaOne, check if 'Security Key' is required for tech logins.",Monthly Tasks
+Physical Security Review,"Verify screen lock timers are enforced via NinjaOne Policy (General Settings > Security). Check that camera/mic privacy LED policies are active.",Monthly Tasks
+Phishing Awareness Validation,"Run a simulated phishing campaign. Review the 'Failure Rate' and assign remedial training to users who clicked suspicious links.",Monthly Tasks
+AI Threat Monitoring Status,"Review EDR/XDR logs for 'Heuristic' or 'Behavioral' detections that were automatically mitigated. Refine AI sensitivity to reduce false positives.",Monthly Tasks
+Cyber Insurance Review,"Review current policy requirements. Ensure all 'Conditions of Coverage' (like EDR or 3-2-1 backups) are being met by your NinjaOne configuration.",Monthly Tasks
+Router & Network Firmware,"Check 'Network Devices' in NinjaOne. Look for SNMP alerts regarding firmware versions. Schedule reboots for any pending updates.",Monthly Tasks
+Anti-Theft Verification,"Ensure 'Find My Device' or 'LoJack' services are active. In NinjaOne, verify 'Location Services' are reporting for mobile/laptop assets.",Monthly Tasks
