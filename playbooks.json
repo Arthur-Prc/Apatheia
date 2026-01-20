@@ -1,0 +1,10 @@
+"remediationPlaybooks": {
+  "antivirus_scan": {
+    "severity": "high",
+    "actions": [
+      "restart_av_service",
+      "trigger_full_scan",
+      "alert_admin"
+    ]
+  }
+}
