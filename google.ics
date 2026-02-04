@@ -1,0 +1,76 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apatheia Protocol//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+
+BEGIN:VEVENT
+UID:apatheia-daily-digital@apatheia.org
+DTSTAMP:20260204T000000Z
+DTSTART:20260205T080000
+DTEND:20260205T081500
+RRULE:FREQ=DAILY
+SUMMARY:Apatheia — Daily Digital Hygiene
+DESCRIPTION:
+- Review passwords or password manager alerts
+- Check device updates
+- Clear inbox / notifications
+Compliance: +1
+END:VEVENT
+
+BEGIN:VEVENT
+UID:apatheia-daily-cognitive@apatheia.org
+DTSTAMP:20260204T000000Z
+DTSTART:20260205T210000
+DTEND:20260205T211500
+RRULE:FREQ=DAILY
+SUMMARY:Apatheia — Daily Cognitive Reset
+DESCRIPTION:
+- No screens last 30 min
+- Journal 3 lines OR breathe 5 min
+Compliance: +1
+END:VEVENT
+
+BEGIN:VEVENT
+UID:apatheia-weekly-security@apatheia.org
+DTSTAMP:20260204T000000Z
+DTSTART:20260207T100000
+DTEND:20260207T103000
+RRULE:FREQ=WEEKLY;BYDAY=SA
+SUMMARY:Apatheia — Weekly Security Check
+DESCRIPTION:
+- Backup verification
+- MFA check
+- Review unusual activity
+Compliance: +5 / Miss: -3
+END:VEVENT
+
+BEGIN:VEVENT
+UID:apatheia-weekly-ops@apatheia.org
+DTSTAMP:20260204T000000Z
+DTSTART:20260207T110000
+DTEND:20260207T113000
+RRULE:FREQ=WEEKLY;BYDAY=SA
+SUMMARY:Apatheia — Weekly Personal Ops Review
+DESCRIPTION:
+- Review finances
+- Review commitments
+- Clean task backlog
+Compliance: +5 / Miss: -3
+END:VEVENT
+
+BEGIN:VEVENT
+UID:apatheia-monthly-integrity@apatheia.org
+DTSTAMP:20260204T000000Z
+DTSTART:20260301T090000
+DTEND:20260301T100000
+RRULE:FREQ=MONTHLY;BYMONTHDAY=1
+SUMMARY:Apatheia — Monthly Integrity Audit
+DESCRIPTION:
+- Life alignment check
+- Tools audit
+- Remove unused subscriptions
+Compliance: +10
+END:VEVENT
+
+END:VCALENDAR
