@@ -163,18 +163,29 @@ Currently transitioning from an Electron-based task engine into a **modular secu
 
 **How Compliance Is Now Calculated (simple & defensible)**
 
-Each task has a weight
+Each task has a weight:
 
-Severity increases impact (critical > high > medium)
+> Severity increases impact (critical > high > medium)
 
-Final score = weighted percentage
+> Final score = weighted percentage
 
 Workspace can:
 
-Pass overall
+> Pass overall
 
-Be At Risk
+> Be At Risk
 
-Be Non-Compliant
+> Be Non-Compliant
 
-A single critical failure can hard-fail compliance
+
+**
+Next logical public updates:**
+
+
+Notion scoring template
+
+“Apatheia Lite” (only daily tasks)
+
+Printable checklist PDF
+
+Automation bridge (Google Calendar → webhook)
