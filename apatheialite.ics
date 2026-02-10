@@ -1,0 +1,30 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Apatheia Lite//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+
+BEGIN:VEVENT
+UID:apatheia-lite-daily@apatheia.org
+DTSTAMP:20260204T000000Z
+DTSTART:20260205T083000
+DTEND:20260205T084500
+RRULE:FREQ=DAILY
+SUMMARY:Apatheia Lite — Daily Hygiene
+DESCRIPTION:
+Apatheia Lite (15 min)
+
+Digital:
+- Check updates
+- Review password manager alerts
+- Look for unusual activity
+
+Cognitive:
+- Clear inbox/notifications
+- 5 min silence, breathing, or journaling
+
+Rule:
+Done > Perfect
+END:VEVENT
+
+END:VCALENDAR
